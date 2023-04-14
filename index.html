@@ -15,19 +15,32 @@
         <meta http-equiv=" pragma" content="cache" />
         <meta http-equiv="Cache-control" content="public" />
         <link rel="shortcut icon" type="image/x-icon" href="/img/icon/favicon_16_16.ico" /> <!--//IE-->
-        <link rel=" icon" type="image/svg+xml" href="/img/icon/favicon_32_32.svg" /> <!--//Chrome extra requirements-->
+        <link rel="icon" type="image/svg+xml" href="/img/icon/favicon_32_32.svg" /> <!--//Chrome extra requirements-->
         <link rel="icon" type="image/png" href="/img/icon/favicon_32_32.png" /> <!--//all-->
-        <link rel=" alternate icon" sizes="16x16" href="/img/icon/favicon_16_16.ico" />
+        <link rel="alternate icon" sizes="16x16" href="/img/icon/favicon_16_16.ico" />
         <title>Space Track - Home</title>
-        <meta id=" theme">
-        <link rel="stylesheet" href="/files/css/boostrap/bootstrap.css">
-        </meta>
+        <meta id="theme">
+        <link rel="stylesheet" href="/files/css/assets/toggle.css">
     </head>
 
     <body>
-        <header></header>
-        <main></main>
-        <footer></footer>
+        <header id="header"></header>
+        <br>
+        <br>
+        <main>
+            <p>Hello World</p>
+        </main>
+        <footer>
+            <p>Goodbye World</p>
+        </footer>
+        <script src="/files/js/BodyHeader.js" type="text/JavaScript"></script>
+        <script src="/files/js/assets/cookie_dealing.js" type="text/JavaScript"></script>
+        <script src="/files/js/assets/dark_light.js" type="text/JavaScript"></script>
+        <script type="text/JavaScript">
+            writeBodyHeader("header");
+            initialiseTheme("theme","darkOrLight",'/','files/css/boostrap/boostrap_dark.css','files/css/boostrap/bootstrap.css');
+        </script>
+        <script async="" defer="" src="https://buttons.github.io/buttons.js"></script>
     </body>
 
 </html>
