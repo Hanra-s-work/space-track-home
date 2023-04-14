@@ -21,6 +21,9 @@
         <title>Space Track - Home</title>
         <meta id="theme">
         <link rel="stylesheet" href="/files/css/assets/toggle.css">
+        <script src="/files/js/BodyHeader.js" type="text/JavaScript"></script>
+        <script src="/files/js/assets/cookie_dealing.js" type="text/JavaScript"></script>
+        <script src="/files/js/assets/dark_light.js" type="text/JavaScript"></script>
     </head>
 
     <body>
@@ -32,10 +35,8 @@
         </main>
         <footer>
             <p>Goodbye World</p>
+            <inform>This Website Uses only one cookie to track the theme you are using. <button class="inform_button" onclick="clear_all_cookies()" aria-label="Clear this websites cookies.">Clear my cookies !</button> </inform>
         </footer>
-        <script src="/files/js/BodyHeader.js" type="text/JavaScript"></script>
-        <script src="/files/js/assets/cookie_dealing.js" type="text/JavaScript"></script>
-        <script src="/files/js/assets/dark_light.js" type="text/JavaScript"></script>
         <script type="text/JavaScript">
             writeBodyHeader("header");
             initialiseTheme("theme","darkOrLight",'/','files/css/boostrap/boostrap_dark.css','files/css/boostrap/bootstrap.css');

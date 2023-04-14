@@ -5,17 +5,72 @@ body {
     font-family: system-ui;
 }
 
-p,h1,h2,h3,h4,h5,h6,h7,h8,span,
-div, span, applet, object, iframe,
-blockquote, pre,a, abbr, acronym, 
-address, big, cite, code,del, dfn, 
-em, font, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, 
-var,b, u, i, center, dl, dt, dd, ol, ul, 
-li,fieldset, form, legend, table, caption, 
-tbody, tfoot, thead, tr, th, td,.label{/*, label*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+h7,
+h8,
+span,
+div,
+span,
+applet,
+object,
+iframe,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+font,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+.label {
+    /*, label*/
     color: black;
-    width:max-content;
+    width: max-content;
 }
 
 /* Layout */
@@ -26,7 +81,7 @@ tbody, tfoot, thead, tr, th, td,.label{/*, label*/
 header {
     position: fixed;
     top: 0px;
-    left:0px;
+    left: 0px;
     width: 100%;
     padding-top: 12px;
     padding-bottom: 12px;
@@ -40,12 +95,12 @@ header {
 
 }
 
-HeaderContainer{
+HeaderContainer {
     width: 90%;
     display: flex;
     flex-wrap: nowrap;
-    margin-left:0px;
-    margin-top:0px;
+    margin-left: 0px;
+    margin-top: 0px;
     margin-bottom: 0px;
     margin-right: 0px;
     padding-left: 0px;
@@ -59,56 +114,56 @@ HeaderContainer{
 
 /* Header Alignements */
 
-HeaderLeft{
+HeaderLeft {
     display: flex;
     flex-direction: row;
     float: left;
     /* width:25%; */
     /* background-color: rgba(100, 148, 237, 0.452); */
-    flex-wrap:wrap;
+    flex-wrap: wrap;
 }
 
-.homeIcon{
+.homeIcon {
     width: 76px;
     /* height: 50px; */
-    
+
 }
 
-.homeIcon:hover{
+.homeIcon:hover {
     /* background-color: rgba(255,217,0,0.39); */
     transform: rotateY(180);
     -moz-transform: rotateY(180);
     -o-transform: rotateY(180);
 }
 
-.HeaderCenter{
+.HeaderCenter {
     display: flex;
     flex-direction: column;
     /* width: 25%; */
     /* background-color: rgba(255, 255, 0, 0.452); */
-    flex-wrap:wrap;
+    flex-wrap: wrap;
     padding-left: 10px;
     padding-right: 10px;
 }
 
-HeaderRight{
+HeaderRight {
     display: flex;
     flex-direction: row;
     float: right;
     width: 25%;
     /* background-color: rgba(0, 100, 0,0.452); */
-    flex-wrap:wrap;
+    flex-wrap: wrap;
     justify-content: space-between;
 }
 
-#checkboxContainer{
+#checkboxContainer {
     /* display: none; */
     display: block;
     background-color: rgba(255, 99, 71, 0.623);
 }
 
 /* Main */
-main{
+main {
     padding-top: 76px;
 }
 
@@ -193,7 +248,38 @@ a:active {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
 }
+
 /* The content section */
-Contents{
-    background-color:rgba(0, 255, 255, 0.308);
+Contents {
+    background-color: rgba(0, 255, 255, 0.308);
+}
+
+inform {
+    background-color: rgb(238, 255, 0);
+    border: 0.5px rgb(238, 255, 0) groove;
+    padding: 5px;
+    width: 100%;
+    height: 100%;
+}
+
+.inform_button {
+    background-color: rgba(255, 255, 255, 0.452);
+    border: 0.5px black groove;
+    padding: 5px;
+    margin: 5px;
+    width: 50%;
+    height: 90%;
+}
+
+.inform_button:hover,
+.inform_button:active {
+    background-color: rgb(41, 22, 216);
+    color: white;
+    border: 0.5px black groove;
+}
+
+.inform_button:clicked {
+    background-color: rgba(255, 255, 255, 0.452);
+    color: black;
+    border: 0.5px black groove;
 }

@@ -16,7 +16,7 @@ function writeBodyHeader(ID) {
     writeBodyHeader += '        <!-- Place this tag where you want the button to render. -->\n';
     writeBodyHeader += '        <a class="github-button" href="https://github.com/Hanra-s-work/space-track" data-icon="octicon-star" data-show-count="true" aria-label="Star Hanra-s-work/space-track on GitHub">Star</a>\n';
     writeBodyHeader += '        <!-- Place this tag where you want the button to render. -->\n';
-    writeBodyHeader += '        <a class="github-button" href="https://github.com/Hanra-s-work/My_styling/fork" data-icon="octicon-repo-forked" data-show-count="true" aria-label="Fork Hanra-s-work/My_styling on GitHub">Fork (stylesheets and scripts)</a>\n';
+    writeBodyHeader += '        <a class="github-button" href="https://github.com/Hanra-s-work/space-track-home/fork" data-icon="octicon-repo-forked" data-show-count="true" aria-label="Fork Hanra-s-work/space-track-home on GitHub">Fork (Website)</a>\n';
     writeBodyHeader += '    </HeaderRight>\n';
     writeBodyHeader += '</HeaderContainer>\n';
     writeBodyHeader += '<div id="checkboxContainer">\n';

@@ -56,4 +56,16 @@ var readCookie = function (key) { //from https://www.w3schools.com/js/js_cookies
 var removeCookie = function (key) {
     document.cookie = key + "=a; expires=Sat, 1 Jan 1921 00:00:00 UTC;"
 }
+
+var clear_all_cookies = function () {
+    var cookies = document.cookie;
+    var cookies_array = cookies.split(";");
+    for (var i = 0; i < cookies_array.length; i++) {
+        var cookie = cookies_array[i];
+        var cookie_name = cookie.split("=")[0];
+        removeCookie(cookie_name);
+    }
+    console.log("Cookies cleared");
+    alert("Cookies Cleared");
+}
 console.log("js/cookie_dealing initialised");
