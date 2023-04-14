@@ -20,7 +20,7 @@ function writeBodyHeader(ID) {
     writeBodyHeader += '    </HeaderRight>\n';
     writeBodyHeader += '</HeaderContainer>\n';
     writeBodyHeader += '<div id="checkboxContainer">\n';
-    writeBodyHeader += '    <input type="checkbox" id="darkOrLight" onclick="theme(\'darkOrLight\',\'theme\',\'/\',\'files/css/boostrap/boostrap_dark.css\',\'files/css/boostrap/bootstrap.css\');">\n';
+    writeBodyHeader += '    <input type="checkbox" id="darkOrLight" onclick="theme(\'darkOrLight\',\'theme\',\'./\',\'files/css/boostrap/boostrap_dark.css\',\'files/css/boostrap/bootstrap.css\');">\n';
     writeBodyHeader += '    <label for="darkOrLight">\n';
     writeBodyHeader += '        <div id="star">\n';
     writeBodyHeader += '            <div class="star" id="star-1">&starf;</div>\n';
