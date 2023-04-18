@@ -1,0 +1,39 @@
+[rigths]
+SUDO="sudo"
+
+[Build_data]
+PULL_NAME="httpd: 2.4.57"
+IMAGE_NAME="my-apache2"
+CONTAINER_ID = 111111111111
+CONTAINER_NAME="my-running-app"
+DOCKERFILE_PATH = "."
+DOCKER_PORT = 80
+
+[Web_access_data]
+PORT = 8080
+URL="http://localhost:${Web_access_data.PORT}"
+
+
+[Mount_data]
+DEFAULT_DEST_DIR="/usr/local/apache2/htdocs/"
+MOUNT_DEST_DIRECTORY="space-track-home"
+
+[Display_colours]
+END_COL = "\033[40m\033[1;92m"
+HEL_COL = "\033[40m\033[1;93m"
+INF_COL = "\033[40m\033[1;96m"
+RES_COL = "\033[0;0m\033[0;0m"
+SUB_TIT_COL = "\033[40m\033[1;95m"
+TIT_COL = "\033[40m\033[93m"
+
+[Dockerfile_content]
+DOCKERFILE_CONTENT  =   """
+FROM httpd:2.4.57
+
+ENV DEST_DIR ${Mount_data.DEFAULT_DEST_DIR}${Mount_data.MOUNT_DEST_DIRECTORY}
+
+RUN mkdir -p $DEST_DIR
+
+COPY . $DEST_DIR,
+
+"""

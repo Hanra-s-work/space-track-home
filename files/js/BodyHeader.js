@@ -1,11 +1,11 @@
-function writeBodyHeader(ID) {
+function writeBodyHeader(ID, HOME="/") {
     var writeBodyHeader = "";
     writeBodyHeader += '    <HeaderContainer>\n';
     writeBodyHeader += '    <HeaderLeft>\n';
-    writeBodyHeader += '        <a class="link" href="/"><img class="homeIcon" src="./files/img/logo/favicon.png"/></a>\n';
+    writeBodyHeader += '        <a class="link" href="'+HOME+'"><img class="homeIcon" src="./files/img/logo/favicon.png"/></a>\n';
     writeBodyHeader += '    </HeaderLeft>\n';
     writeBodyHeader += '    <center class="HeaderCenter">\n';
-    writeBodyHeader += '        <h1>Space Track</h1 >\n';
+    writeBodyHeader += '        <h1>Space Track</h1>\n';
     writeBodyHeader += '    </center>\n';
     writeBodyHeader += '    <HeaderRight>\n';
     writeBodyHeader += '        <div class="fb-like" data-href="https://www.facebook.com/HenrySoftwareHouse" data-width="" data-layout="button_count" data-action="like" data-size="small" data-share="true"></div>\n';
