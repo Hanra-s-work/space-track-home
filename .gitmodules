@@ -1,3 +1,9 @@
 [submodule "bonus/bonus_ressources/servers/arch_linux_installation"]
 	path = bonus/bonus_ressources/servers/arch_linux_installation
 	url = git@github.com:HenraL/arch_linux_installation.git
+[submodule "bonus/bonus_ressources/js_libs/timeline"]
+	path = bonus/bonus_ressources/js_libs/timeline
+	url = git@github.com:squarechip/timeline.git
+[submodule "bonus/bonus_ressources/js_libs/rainyday.js"]
+	path = bonus/bonus_ressources/js_libs/rainyday.js
+	url = git@github.com:mubaidr/rainyday.js.git
