@@ -14,19 +14,24 @@
         <meta name="google-site-verification" content="" />
         <meta http-equiv=" pragma" content="cache" />
         <meta http-equiv="Cache-control" content="public" />
-        <link rel="shortcut icon" type="image/x-icon" href="./files/img/icon/favicon_16_16.ico" /> <!--//IE-->
-        <link rel="icon" type="image/svg+xml" href="./files/img/icon/favicon_32_32.svg" /> <!--//Chrome extra requirements-->
-        <link rel="icon" type="image/png" href="./files/img/icon/favicon_32_32.png" /> <!--//all-->
-        <link rel="alternate icon" sizes="16x16" href="./files/img/icon/favicon_16_16.ico" />
-        <title>Space Track - Home</title>
+        <link rel="shortcut icon" type="image/x-icon" href="./../../img/icon/favicon_16_16.ico" /> <!--//IE-->
+        <link rel="icon" type="image/svg+xml" href="./../../img/icon/favicon_32_32.svg" /> <!--//Chrome extra requirements-->
+        <link rel="icon" type="image/png" href="./../../img/icon/favicon_32_32.png" /> <!--//all-->
+        <link rel="alternate icon" sizes="16x16" href="./../../img/icon/favicon_16_16.ico" />
+        <title>Space Track - Credits</title>
         <meta id="theme">
-        <link rel="stylesheet" href="./files/css/assets/toggle.css">
-        <script src="./files/js/BodyHeader.js" type="text/JavaScript"></script>
-        <script src="./files/js/assets/cookie_dealing.js" type="text/JavaScript"></script>
-        <script src="./files/js/assets/dark_light.js" type="text/JavaScript"></script>
+        <link rel="stylesheet" href="./../../css/assets/toggle.css">
+        <link rel="stylesheet" href="./../../css/assets/table_of_contents.css">
+        <script src="./../../js/write_body_header.js" type="text/JavaScript"></script>
+        <script src="./../../js/assets/sleep.js" type="text/JavaScript"></script>
+        <script src="./../../js/assets/cookie_dealing.js" type="text/JavaScript"></script>
+        <script src="./../../js/assets/dark_light.js" type="text/JavaScript"></script>
+        <script src="./../../js/assets/animate_menu.js" type="text/JavaScript"></script>
+        <script src="./../../js/table_of_contents.js" type="text/JavaScript"></script>
     </head>
 
     <body>
+        <menu id="table_of_content"></menu>
         <header id="header"></header>
         <br>
         <br>
@@ -38,8 +43,10 @@
             <inform>This Website Uses only one cookie to track the theme you are using. <button class="inform_button" onclick="clear_all_cookies()" aria-label="Clear this websites cookies.">Clear my cookies !</button> </inform>
         </footer>
         <script type="text/JavaScript">
-            writeBodyHeader("header", "/space-track-home");
-            initialiseTheme("theme","darkOrLight",'./','files/css/boostrap/boostrap_dark.css','files/css/boostrap/bootstrap.css');
+            table_of_contents('table_of_content', 'Credits');
+            animate_menu('table_of_contents');
+            writeBodyHeader("header", "../../../");
+            initialiseTheme("theme","darkOrLight",'../../../','files/css/boostrap/boostrap_dark.css','files/css/boostrap/bootstrap.css');
         </script>
         <script async="" defer="" src="https://buttons.github.io/buttons.js"></script>
     </body>
