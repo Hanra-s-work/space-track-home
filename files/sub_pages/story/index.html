@@ -18,15 +18,20 @@
         <link rel="icon" type="image/svg+xml" href="./files/img/icon/favicon_32_32.svg" /> <!--//Chrome extra requirements-->
         <link rel="icon" type="image/png" href="./files/img/icon/favicon_32_32.png" /> <!--//all-->
         <link rel="alternate icon" sizes="16x16" href="./files/img/icon/favicon_16_16.ico" />
-        <title>Space Track - Home</title>
+        <title>Space Track - Story</title>
         <meta id="theme">
         <link rel="stylesheet" href="./files/css/assets/toggle.css">
-        <script src="./files/js/BodyHeader.js" type="text/JavaScript"></script>
+        <link rel="stylesheet" href="./files/css/assets/table_of_contents.css">
+        <script src="./files/js/write_body_header.js" type="text/JavaScript"></script>
+        <script src="./files/js/assets/sleep.js" type="text/JavaScript"></script>
         <script src="./files/js/assets/cookie_dealing.js" type="text/JavaScript"></script>
         <script src="./files/js/assets/dark_light.js" type="text/JavaScript"></script>
+        <script src="./files/js/assets/animate_menu.js" type="text/JavaScript"></script>
+        <script src="./files/js/table_of_contents.js" type="text/JavaScript"></script>
     </head>
 
     <body>
+        <menu id="table_of_content"></menu>
         <header id="header"></header>
         <br>
         <br>
@@ -38,6 +43,8 @@
             <inform>This Website Uses only one cookie to track the theme you are using. <button class="inform_button" onclick="clear_all_cookies()" aria-label="Clear this websites cookies.">Clear my cookies !</button> </inform>
         </footer>
         <script type="text/JavaScript">
+            table_of_contents('table_of_content');
+            animate_menu('table_of_contents');
             writeBodyHeader("header", "/space-track-home");
             initialiseTheme("theme","darkOrLight",'./','files/css/boostrap/boostrap_dark.css','files/css/boostrap/bootstrap.css');
         </script>
