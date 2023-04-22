@@ -1,8 +1,9 @@
-function writeBodyHeader(ID, HOME="/") {
+function writeBodyHeader(ID, HOME = "/") {
     var writeBodyHeader = "";
     writeBodyHeader += '    <HeaderContainer>\n';
     writeBodyHeader += '    <HeaderLeft>\n';
-    writeBodyHeader += '        <a class="link" href="'+HOME+'"><img class="homeIcon" src="./files/img/logo/favicon.png"/></a>\n';
+    writeBodyHeader += '        <button class="table_button" onclick = "animate_menu(\'table_of_contents\')">Menu</button>\n';
+    writeBodyHeader += '        <a class="link" href="' + HOME + '"><img class="homeIcon" src="./files/img/logo/favicon.png"/></a>\n';
     writeBodyHeader += '    </HeaderLeft>\n';
     writeBodyHeader += '    <center class="HeaderCenter">\n';
     writeBodyHeader += '        <h1>Space Track</h1>\n';

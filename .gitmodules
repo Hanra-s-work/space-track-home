@@ -1,0 +1,3 @@
+[submodule "bonus/bonus_ressources/servers/arch_linux_installation"]
+	path = bonus/bonus_ressources/servers/arch_linux_installation
+	url = git@github.com:HenraL/arch_linux_installation.git

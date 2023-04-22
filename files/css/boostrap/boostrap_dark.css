@@ -156,6 +156,10 @@ main {
 }
 
 /* Footer */
+footer {
+    margin-left: 0%;
+    margin-right: 0%;
+}
 
 
 /* links */
@@ -190,6 +194,27 @@ a:active {
     width: 100%;
 }
 
+
+/* Buttons */
+button {
+    background-color: rgb(22, 216, 216);
+    border: 0.5px rgb(0, 0, 0) groove;
+    padding: 5px;
+    margin: 5px;
+}
+
+button:hover,
+button:active {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    border: 0.5px black groove;
+}
+
+button:clicked {
+    background-color: rgb(22, 216, 216);
+    color: rgb(0, 0, 0);
+    border: 0.5px black groove;
+}
 
 /* images */
 
@@ -249,6 +274,8 @@ inform {
     padding: 5px;
     width: 100%;
     height: 100%;
+    margin-right: 0%;
+    margin-left: 0%;
 }
 
 .inform_button {
