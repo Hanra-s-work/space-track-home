@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'GikoDotEmoji';
+    src: url('GikoDotEmoji-Regular.eot');
+    src: url('GikoDotEmoji-Regular.eot?#iefix') format('embedded-opentype'),
+        url('GikoDotEmoji-Regular.woff2') format('woff2'),
+        url('GikoDotEmoji-Regular.woff') format('woff'),
+        url('GikoDotEmoji-Regular.ttf') format('truetype'),
+        url('GikoDotEmoji-Regular.svg#GikoDotEmoji-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+

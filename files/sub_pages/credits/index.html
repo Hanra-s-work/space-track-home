@@ -24,6 +24,8 @@
         <link rel="stylesheet" href="./../../css/assets/table_of_contents.css">
         <link rel="stylesheet" href="./../../css/stylesheet.css">
         <link rel="stylesheet" href="./../../css/credits.css">
+        <link rel="stylesheet" href="./../../css/fontsheets/emojy_b_n_w_font.css">
+        <link rel="stylesheet" href="./../../css/fontsheets/emojy_general_use_font.css">
         <script src="./../../js/write_body_header.js" type="text/JavaScript"></script>
         <script src="./../../js/assets/sleep.js" type="text/JavaScript"></script>
         <script src="./../../js/assets/cookie_dealing.js" type="text/JavaScript"></script>
@@ -35,6 +37,7 @@
         <script src="./../../js/copyright.js" type="text/JavaScript"></script>
         <script src="./../../js/add_social_icon.js" type="text/JavaScript"></script>
         <script src="./../../js/add_contributor.js" type="text/JavaScript"></script>
+        <script src="./../../js/story/add_emoji.js" type="text/JavaScript"></script>
     </head>
 
     <body>
@@ -60,7 +63,25 @@
             <span id='HL'></span>
         </main>
         <footer>
+            <h1>Site ressources</h1>
+            <h2>Social media icons</h2>
             <span id="site_credits"></span>
+            <br>
+            <h2>Emoji sheets</h2>
+            <div aria-details="The section containing the link for the first emoji sheet">
+                <p><a href="https://github.com/joypixels/emojione" class="social_link"><span id="happy1"></span><span id="sad1"></span> Emojione : https://github.com/joypixels/emojione</a></p>
+                <script type="text/JavaScript">
+                    add_emoji("happy1", "😀", "a smiling emoji", "emoji_g_u");
+                    add_emoji("sad1", "😢", "a sad emoji", "emoji_g_u");
+                </script>
+            </div>
+            <div aria-details="The section containing the link for the first emoji sheet">
+                <p><a href="https://www.fontspace.com/giko-dot-emoji-font-f70999" class="social_link"><span id="happy2"></span><span id="sad2"></span> Giko Dot Emoji : https://www.fontspace.com/giko-dot-emoji-font-f70999</a></p>
+                <script type="text/JavaScript">
+                    add_emoji("happy2", "😀", "a smiling emoji", "emoji_b_n_w");
+                    add_emoji("sad2", "😢", "a sad emoji", "emoji_b_n_w");
+                </script>
+            </div>
             <br>
             <inform id="inform_cookie"></inform>
             <copyright id="copyright_zone"></copyright>

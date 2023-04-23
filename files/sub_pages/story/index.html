@@ -22,6 +22,9 @@
         <meta id="theme">
         <link rel="stylesheet" href="./../../css/assets/toggle.css">
         <link rel="stylesheet" href="./../../css/assets/table_of_contents.css">
+        <link rel="stylesheet" href="./../../css/story.css">
+        <link rel="stylesheet" href="./../../css/fontsheets/emojy_b_n_w_font.css">
+        <link rel="stylesheet" href="./../../css/fontsheets/emojy_general_use_font.css">
         <script src="./../../js/write_body_header.js" type="text/JavaScript"></script>
         <script src="./../../js/assets/sleep.js" type="text/JavaScript"></script>
         <script src="./../../js/assets/cookie_dealing.js" type="text/JavaScript"></script>
@@ -30,6 +33,8 @@
         <script src="./../../js/assets/animate_menu.js" type="text/JavaScript"></script>
         <script src="./../../js/table_of_contents.js" type="text/JavaScript"></script>
         <script src="./../../js/copyright.js" type="text/JavaScript"></script>
+        <script src="./../../js/story/add_an_image.js" type="text/JavaScript"></script>
+        <script src="./../../js/story/add_emoji.js" type="text/JavaScript"></script>
     </head>
 
     <body>
@@ -38,7 +43,21 @@
         <br>
         <br>
         <main>
-            <p>Hello World</p>
+            <article class="article_body">
+                <h1>Space Track</h1>
+                <span id="main_logo"></span>
+                <br>
+                <p><i>Space Track</i> is a website that allows you to track the position of the International Space Station (ISS) in real time. It also allows you to see the position of the ISS in the past and in the future. It is also possible to see the position of the ISS in relation to the Sun and the Moon.</p>
+                <br>
+                <p>Just Kidding. <span id="joke1"></span></p>
+                <br>
+                <p><i>Space Track</i> is a game where you need to find your long lost pall <span id="sad1"></span>, &laquo; <span lang="fr">Persévérence</span> &raquo;</p>
+                <br>
+                <p>We are in the year 2077 <span id="amazed1"></span> and you are a mad scientist named Rick.</p>
+                <br>
+                <p>Embarc on a fascinating journey through space <span id="space1"></span>, start from the earth <span id="earth1"></span> and end on mars <span id="mars1"></span>.</p>
+
+            </article>
         </main>
         <footer>
             <inform id="inform_cookie"></inform>
@@ -51,6 +70,17 @@
             initialiseTheme("theme","darkOrLight",'../../../','files/css/boostrap/boostrap_dark.css','files/css/boostrap/bootstrap.css');
             copyright("copyright_zone");
             add_inform("inform_cookie");
+        </script>
+        <script type="text/JavaScript">
+            add_an_image("main_logo", "../../../files/img/assets/icon_301_302.png", "image_body", "Space Track logo (a white rocket on an orange background)");
+        </script>
+        <script type="text/JavaScript">
+            add_emoji("joke1", "😉", "A winking emoji");
+            add_emoji("sad1", "😢", "A sad emoji");
+            add_emoji("amazed1", "😲", "an amazed emoji");
+            add_emoji("space1", "🚀", "a rocket that is flying", "emoji_g_u");
+            add_emoji("earth1", "🌍", "a globe that is on the earth", "emoji_g_u");
+            add_emoji("mars1", "🌑", "a moon that is on mars", "emoji_g_u");
         </script>
         <script async="" defer="" src="https://buttons.github.io/buttons.js"></script>
     </body>

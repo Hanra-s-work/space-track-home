@@ -1,0 +1,45 @@
+/*
+** EPITECH PROJECT, 2022
+** space-track-home (Workspace)
+** File description:
+** story.css
+*/
+
+.article_body {
+    margin-right: 20px;
+    margin-left: 20px;
+    width: 100%;
+    max-width: 90%;
+    word-wrap: break-word;
+    margin: 0 auto;
+    padding: 20px;
+    line-height: 1.5;
+    white-space: normal;
+}
+
+article p {
+    width: 100%;
+    text-align: justify;
+    white-space: normal;
+    word-wrap: normal;
+}
+
+
+
+.image_body {
+    height: 200px;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.image_seperator {
+    height: 40px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
