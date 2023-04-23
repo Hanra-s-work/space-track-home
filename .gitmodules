@@ -7,3 +7,6 @@
 [submodule "bonus/bonus_ressources/js_libs/rainyday.js"]
 	path = bonus/bonus_ressources/js_libs/rainyday.js
 	url = git@github.com:mubaidr/rainyday.js.git
+[submodule "bonus/bonus_ressources/servers/wolf_escape_home"]
+	path = bonus/bonus_ressources/servers/wolf_escape_home
+	url = git@github.com:HanraLatalliardWork/wolf_escape_home.git
