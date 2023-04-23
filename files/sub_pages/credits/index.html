@@ -23,13 +23,16 @@
         <link rel="stylesheet" href="./../../css/assets/toggle.css">
         <link rel="stylesheet" href="./../../css/assets/table_of_contents.css">
         <link rel="stylesheet" href="./../../css/stylesheet.css">
+        <link rel="stylesheet" href="./../../css/credits.css">
         <script src="./../../js/write_body_header.js" type="text/JavaScript"></script>
         <script src="./../../js/assets/sleep.js" type="text/JavaScript"></script>
         <script src="./../../js/assets/cookie_dealing.js" type="text/JavaScript"></script>
         <script src="./../../js/assets/dark_light.js" type="text/JavaScript"></script>
         <script src="./../../js/assets/animate_menu.js" type="text/JavaScript"></script>
+        <script src="./../../js/assets/reload_page.js" type="text/JavaScript"></script>
         <script src="./../../js/table_of_contents.js" type="text/JavaScript"></script>
         <script src="./../../js/copyright.js" type="text/JavaScript"></script>
+        <script src="./../../js/add_social_icon.js" type="text/JavaScript"></script>
         <script src="./../../js/add_contributor.js" type="text/JavaScript"></script>
     </head>
 
@@ -67,16 +70,19 @@
             copyright("copyright_zone");
         </script>
         <script type="text/JavaScript">
-            add_contributor('IM', "Marie Incandela", "https://www.linkedin.com/in/marie-incandela/", "@@marie-incandela", "(Linkedin)");
-            add_contributor('HSK', "Harleen Singh Kaur", "https://www.linkedin.com/in/harleen-singh-kaur/", "@harleen_singh-kaur", "(Linkedin)");
-            add_contributor('N91', "Nyway", "https://www.instagram.com/ninjade91/", "@ninjade91", "(Instagram)");
-            add_contributor('D', "Mayhém", "https://twitter.com/Dizourdre/", "@Dizourdre","(Twitter)");
-            add_contributor('N', "Nyway", "https://twitter.com/Nyway_/", "@Nyway", "(Twitter)");
-            add_contributor('NF', "Noriitsu", "https://www.instagram.com/noriitsu_fox/", "@noriitsu_fox", "(Instagram)");
-            add_contributor('HL', "Henry Letellier", "https://www.linkedin.com/in/henry-letellier/", "@HenryLetellier", "(Linkedin)");
-            add_contributor('TL', "Thomas Lebouc", "https://www.linkedin.com/in/thomas-lebouc/", "@thomas_lebouc", "(Linkedin)");
-            add_contributor('EX', "Eric Xu", "https://www.linkedin.com/in/eric-xu-dev/", "@eric_xu", "(Linkedin)");
+            add_contributor('IM', "Marie Incandela", "https://www.linkedin.com/in/marie-incandela/", "@marie-incandela", "Linkedin");
+            add_contributor('HSK', "Harleen Singh Kaur", "https://www.linkedin.com/in/harleen-singh-kaur/", "@harleen_singh-kaur", "Linkedin");
+            add_contributor('N91', "Nyway", "https://www.instagram.com/ninjade91/", "@ninjade91", "Instagram");
+            add_contributor('D', "Mayhém", "https://twitter.com/Dizourdre/", "@Dizourdre","Twitter");
+            add_contributor('N', "Nyway", "https://twitter.com/Nyway_/", "@Nyway", "Twitter");
+            add_contributor('NF', "Noriitsu", "https://www.instagram.com/noriitsu_fox/", "@noriitsu_fox", "Instagram");
+            add_contributor('HL', "Henry Letellier", "https://www.linkedin.com/in/henry-letellier/", "@HenryLetellier", "Linkedin");
+            add_contributor('TL', "Thomas Lebouc", "https://www.linkedin.com/in/thomas-lebouc/", "@thomas_lebouc", "Linkedin");
+            add_contributor('EX', "Eric Xu", "https://www.linkedin.com/in/eric-xu-dev/", "@eric_xu", "Linkedin");
             </script>
+        <script type="text/JavaScript">
+            document.getElementById('darkOrLight').addEventListener('click', reload_page);
+        </script>
         <script async="" defer="" src="https://buttons.github.io/buttons.js"></script>
     </body>
 
