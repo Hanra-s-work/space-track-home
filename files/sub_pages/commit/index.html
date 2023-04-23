@@ -28,6 +28,7 @@
         <script src="./../../js/assets/dark_light.js" type="text/JavaScript"></script>
         <script src="./../../js/assets/animate_menu.js" type="text/JavaScript"></script>
         <script src="./../../js/table_of_contents.js" type="text/JavaScript"></script>
+        <script src="./../../js/copyright.js" type="text/JavaScript"></script>
     </head>
 
     <body>
@@ -39,14 +40,15 @@
             <p>Hello World</p>
         </main>
         <footer>
-            <p>Goodbye World</p>
             <inform>This Website Uses only one cookie to track the theme you are using. <button class="inform_button" onclick="clear_all_cookies()" aria-label="Clear this websites cookies.">Clear my cookies !</button> </inform>
+            <copyright id="copyright_zone"></copyright>
         </footer>
         <script type="text/JavaScript">
             table_of_contents('table_of_content', 'Commit');
             animate_menu('table_of_contents');
             writeBodyHeader("header", "../../../");
             initialiseTheme("theme","darkOrLight",'../../../','files/css/boostrap/boostrap_dark.css','files/css/boostrap/bootstrap.css');
+            copyright("copyright_zone");
         </script>
         <script async="" defer="" src="https://buttons.github.io/buttons.js"></script>
     </body>

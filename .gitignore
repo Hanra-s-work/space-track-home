@@ -6,4 +6,5 @@ lvenv/**
 **/lvenv/**
 **/**/lvenv/**
 ./Dockerfile
+Dockerfile
 ./docker-compose.yml
