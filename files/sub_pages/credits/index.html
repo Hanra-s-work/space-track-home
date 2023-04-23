@@ -20,10 +20,11 @@
         <link rel="alternate icon" sizes="16x16" href="./../../img/icon/favicon_16_16.ico" />
         <title>Space Track - Credits</title>
         <meta id="theme">
+        <link rel="stylesheet" href="./../../css/story.css">
+        <link rel="stylesheet" href="./../../css/credits.css">
+        <link rel="stylesheet" href="./../../css/stylesheet.css">
         <link rel="stylesheet" href="./../../css/assets/toggle.css">
         <link rel="stylesheet" href="./../../css/assets/table_of_contents.css">
-        <link rel="stylesheet" href="./../../css/stylesheet.css">
-        <link rel="stylesheet" href="./../../css/credits.css">
         <link rel="stylesheet" href="./../../css/fontsheets/emojy_b_n_w_font.css">
         <link rel="stylesheet" href="./../../css/fontsheets/emojy_general_use_font.css">
         <script src="./../../js/write_body_header.js" type="text/JavaScript"></script>
@@ -38,6 +39,7 @@
         <script src="./../../js/add_social_icon.js" type="text/JavaScript"></script>
         <script src="./../../js/add_contributor.js" type="text/JavaScript"></script>
         <script src="./../../js/story/add_emoji.js" type="text/JavaScript"></script>
+        <script src="./../../js/story/add_an_image.js" type="text/JavaScript"></script>
     </head>
 
     <body>
@@ -83,6 +85,8 @@
                 </script>
             </div>
             <br>
+            <h2>Images</h2>
+            <p><a href="https://www.nasa.gov/" class="social_link"><span id="nasa1"></span> NASA (Logo): https://www.nasa.gov/</p>
             <inform id="inform_cookie"></inform>
             <copyright id="copyright_zone"></copyright>
         </footer>
@@ -105,6 +109,9 @@
             add_contributor('TL', "Thomas Lebouc", "https://www.linkedin.com/in/thomas-lebouc/", "@thomas_lebouc", "Linkedin", "../../../");
             add_contributor('EX', "Eric Xu", "https://www.linkedin.com/in/eric-xu-dev/", "@eric_xu", "Linkedin", "../../../");
             add_social_credits("site_credits", "../../../");
+        </script>
+        <script type="text/JavaScript">
+            add_an_image("nasa1","../../img/inspiration/nasa-logo.svg","image_emoji", "The logo of the NASA company.");
         </script>
         <script type="text/JavaScript">
             document.getElementById('darkOrLight').addEventListener('click', reload_page);

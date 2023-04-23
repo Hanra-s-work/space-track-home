@@ -10,3 +10,12 @@
 [submodule "bonus/bonus_ressources/servers/wolf_escape_home"]
 	path = bonus/bonus_ressources/servers/wolf_escape_home
 	url = git@github.com:HanraLatalliardWork/wolf_escape_home.git
+[submodule "bonus/bonus_ressources/js_libs/octokit.js"]
+	path = bonus/bonus_ressources/js_libs/octokit.js
+	url = git@github.com:octokit/octokit.js.git
+[submodule "bonus/bonus_ressources/js_libs/axios"]
+	path = bonus/bonus_ressources/js_libs/axios
+	url = git@github.com:axios/axios.git
+[submodule "bonus/bonus_ressources/js_libs/github"]
+	path = bonus/bonus_ressources/js_libs/github
+	url = git@github.com:github-tools/github.git

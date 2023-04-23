@@ -18,10 +18,15 @@
         <link rel="icon" type="image/svg+xml" href="./../../img/icon/favicon_32_32.svg" /> <!--//Chrome extra requirements-->
         <link rel="icon" type="image/png" href="./../../img/icon/favicon_32_32.png" /> <!--//all-->
         <link rel="alternate icon" sizes="16x16" href="./../../img/icon/favicon_16_16.ico" />
+        <link rel="stylesheet" href="./../../css/fontsheets/emojy_b_n_w_font.css">
+        <link rel="stylesheet" href="./../../css/fontsheets/emojy_general_use_font.css">
         <title>Space Track - Inspiration</title>
         <meta id="theme">
         <link rel="stylesheet" href="./../../css/assets/toggle.css">
         <link rel="stylesheet" href="./../../css/assets/table_of_contents.css">
+        <link rel="stylesheet" href="./../../css/fontsheets/emojy_b_n_w_font.css">
+        <link rel="stylesheet" href="./../../css/fontsheets/emojy_general_use_font.css">
+        <link rel="stylesheet" href="./../../css/story.css">
         <script src="./../../js/assets/add_inform.js" type="text/JavaScript"></script>
         <script src="./../../js/write_body_header.js" type="text/JavaScript"></script>
         <script src="./../../js/assets/sleep.js" type="text/JavaScript"></script>
@@ -30,6 +35,8 @@
         <script src="./../../js/assets/animate_menu.js" type="text/JavaScript"></script>
         <script src="./../../js/table_of_contents.js" type="text/JavaScript"></script>
         <script src="./../../js/copyright.js" type="text/JavaScript"></script>
+        <script src="./../../js/story/add_an_image.js" type="text/JavaScript"></script>
+        <script src="./../../js/story/add_emoji.js" type="text/JavaScript"></script>
     </head>
 
     <body>
@@ -38,7 +45,32 @@
         <br>
         <br>
         <main>
-            <h1></h1>
+            <article class="article_body">
+                <h1>The Space mission on mars of 2020</h1>
+                <h3> Was the inspiration of the game</h3>
+                <br>
+                <h4><u>What is it ?</u></h4>
+                <p>It is a mission to mars, the first one to bring humans to mars.</p>
+                <p>It is a joint mission between the US <span id="us1"></span>, the EU <span id="eu1"></span> and Russia<span id="ru1"></span>.</p>
+                <p>The mission is to bring <span id="astronaut1"></span>humans to <span id="mars1"></span>mars and to bring back samples of the surface of mars.</p>
+                <p>The mission lasts <span id="calendar1"></span>2 years and to be the first step of a <span id="colony1"></span>human colonization of mars.</p>
+                <p>It is a mission that will be a great step in the history of mankind.</p>
+                <br>
+                <p><b>Why is it important ?</b></p>
+                <p>It is important because it is the <span id="first1"></span>first time that humans will go to mars.</p>
+                <br>
+                <p><b>What is the mission ?</b></p>
+                <p>The mission is to bring <span id="human1"></span><span id="human2"></span>humans to <span id="mars2"></span>mars and to bring back samples of the surface of mars.</p>
+                <br>
+                <h4><u>How does it tie into the game?</u></h4>
+                <br>
+                <p><b>What is the game about ?</b></p>
+                <p>The game is about a space mission to mars.</p>
+                <br>
+                <p><b>What is the goal of the game ?</b></p>
+                <p>The goal of the game is to find out why NASA <span id="nasa1"></span> has lost all communication with the rover <span lang="fr">Persévérance</span></p>
+                <br>
+            </article>
         </main>
         <footer>
             <inform id="inform_cookie"></inform>
@@ -51,6 +83,20 @@
             initialiseTheme("theme","darkOrLight",'../../../','files/css/boostrap/boostrap_dark.css','files/css/boostrap/bootstrap.css');
             copyright("copyright_zone");
             add_inform("inform_cookie");
+        </script>
+        <script type="text/JavaScript">
+            add_emoji("us1", "🇺🇸", "The flag of the USA (United States of America)", "emoji_g_u");
+            add_emoji("eu1", "🇪🇺", "The flag of the EU (European Union)", "emoji_g_u");
+            add_emoji("ru1", "🇷🇺", "The flag of Russia", "emoji_g_u");
+            add_emoji("astronaut1", "👨‍🚀", "An astronaut", /*"emoji_g_u"*/);
+            add_emoji("mars1", "🌑", "A moon that is on mars", "emoji_g_u");
+            add_emoji("calendar1", "📆", "A calendar", "emoji_g_u");
+            add_emoji("colony1", "🏠", "A house", "emoji_g_u");
+            add_emoji("first1", "🥇", "A first place medal", "emoji_g_u");
+            add_emoji("human1", "🧍‍♂️", "A man standing", "emoji_g_u");
+            add_emoji("human2", "🧍", "A woman standing", "emoji_g_u");
+            add_emoji("mars2", "🌑", "A moon that is on mars", "emoji_g_u");
+            add_an_image("nasa1","../../img/inspiration/nasa-logo.svg","image_emoji", "The logo of the NASA company.");
         </script>
         <script async="" defer="" src="https://buttons.github.io/buttons.js"></script>
     </body>
