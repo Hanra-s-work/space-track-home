@@ -46,3 +46,40 @@ function add_social_icon(ID, media_name, social_link, icon_source_path = "../../
     }
     document.getElementById(ID).innerHTML += social_icon;
 }
+
+function add_social_credits(ID, icon_source_path = "../../../") {
+    var icons = "";
+    var link_list = {
+        "Behance": "https://www.flaticon.com/free-icons/behance-network",
+        "Codepen": "https://materialdesignicons.com/icon/codepen",
+        "Dev-to": "https://materialdesignicons.com/icon/dev-to",
+        "Discord": "https://materialdesignicons.com/icon/discord",
+        "Facebook": "https://materialdesignicons.com/icon/facebook",
+        "Github": "https://materialdesignicons.com/icon/github",
+        "Instagram": "https://materialdesignicons.com/icon/instagram",
+        "Linkedin": "https://materialdesignicons.com/icon/linkedin",
+        "Patreon": "https://materialdesignicons.com/icon/patreon",
+        "Pinterest": "https://pictogrammers.com/library/mdi/icon/pinterest/",
+        "Reddit": "https://pictogrammers.com/library/mdi/icon/reddit/",
+        "Repl.it": "https://repl.it/public/images/favicon.ico",
+        "Snapchat": "https://pictogrammers.com/library/mdi/icon/snapchat/",
+        "SoundCloud": "https://pictogrammers.com/library/mdi/icon/soundcloud/",
+        "Spotify": "https://pictogrammers.com/library/mdi/icon/spotify/",
+        "Steam": "https://materialdesignicons.com/icon/steam",
+        "Tiktok": "https://www.flaticon.com/free-icons/tiktok",
+        "Tumblr": "https://www.flaticon.com/free-icons/tumblr-badge",
+        "Twitch": "https://pictogrammers.com/library/mdi/icon/twitch/",
+        "Twitter": "https://pictogrammers.com/library/mdi/icon/twitter/",
+        "Vimeo": "https://pictogrammers.com/library/mdi/icon/vimeo/",
+        "Youtube": "https://materialdesignicons.com/icon/youtube",
+    }
+    for (var item in link_list) {
+        document.getElementById(ID).innerHTML += "<div class='contributor'>";
+        add_social_icon(ID, item, link_list[item], icon_source_path);
+        icons += "   <a href='" + link_list[item] + "' target='_blank' class='social_icon'>";
+        icons += item + " : " + link_list[item] + "</a>";
+        icons += "</div>";
+        document.getElementById(ID).innerHTML += icons;
+        icons = "";
+    }
+}

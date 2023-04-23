@@ -27,6 +27,7 @@
         <script src="./../../js/assets/cookie_dealing.js" type="text/JavaScript"></script>
         <script src="./../../js/assets/dark_light.js" type="text/JavaScript"></script>
         <script src="./../../js/assets/animate_menu.js" type="text/JavaScript"></script>
+        <script src="./../../js/assets/add_inform.js" type="text/JavaScript"></script>
         <script src="./../../js/table_of_contents.js" type="text/JavaScript"></script>
         <script src="./../../js/copyright.js" type="text/JavaScript"></script>
     </head>
@@ -40,7 +41,7 @@
             <p>Hello World</p>
         </main>
         <footer>
-            <inform>This Website Uses only one cookie to track the theme you are using. <button class="inform_button" onclick="clear_all_cookies()" aria-label="Clear this websites cookies.">Clear my cookies !</button> </inform>
+            <inform id="inform_cookie"></inform>
             <copyright id="copyright_zone"></copyright>
         </footer>
         <script type="text/JavaScript">
@@ -49,6 +50,7 @@
             writeBodyHeader("header", "../../../");
             initialiseTheme("theme","darkOrLight",'../../../','files/css/boostrap/boostrap_dark.css','files/css/boostrap/bootstrap.css');
             copyright("copyright_zone");
+            add_inform("inform_cookie");
         </script>
         <script async="" defer="" src="https://buttons.github.io/buttons.js"></script>
     </body>
