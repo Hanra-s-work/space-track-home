@@ -1,4 +1,4 @@
-# space-track-home [![GitHub Pages Status](https://img.shields.io/github/actions/workflow/status/Hanra-s-work/space-track-home/jekyll-gh-pages.yml?branch=main&label=test&logo=github&style=flat-square)](https://github.com/Hanra-s-work/space-track-home/actions/workflows/pages.yml)
+# space-track-home [![GitHub Pages Status](https://img.shields.io/github/actions/workflow/status/Hanra-s-work/space-track-home/jekyll-gh-pages.yml?branch=main&label=build&logo=github&style=flat-square)](https://github.com/Hanra-s-work/space-track-home/actions/workflows/pages.yml)
 
 This is the home page of space-track: [Hanra-s-work/space-track](https://github.com/Hanra-s-work/space-track)
 
