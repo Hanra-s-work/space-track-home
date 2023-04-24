@@ -22,6 +22,7 @@ function keep_as_link(CURRENT = "Home", links = {}) {
 function table_of_contents(ID, CURRENT = "Home") {
     var i = 0;
     var compile_all = "";
+    var joke_id = "a_toc_joke";
     var dest = document.getElementById(ID);
     var links = {
         "Home": "/space-track-home/",
@@ -42,8 +43,10 @@ function table_of_contents(ID, CURRENT = "Home") {
     compile_all += keep_as_link(CURRENT, links);
     compile_all += '    </ul>';
     compile_all += '    </nav>';
+    compile_all += `    <div id="${joke_id}"></div>`;
     compile_all += '</side>';
     compile_all += '';
 
     dest.innerHTML = compile_all;
+    add_a_joke(joke_id);
 }

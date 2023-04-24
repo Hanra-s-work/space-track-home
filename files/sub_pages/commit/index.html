@@ -28,8 +28,27 @@
         <script src="./../../js/assets/dark_light.js" type="text/JavaScript"></script>
         <script src="./../../js/assets/animate_menu.js" type="text/JavaScript"></script>
         <script src="./../../js/assets/add_inform.js" type="text/JavaScript"></script>
+        <script src="./../../js/assets/add_a_joke.js" type="text/JavaScript"></script>
         <script src="./../../js/table_of_contents.js" type="text/JavaScript"></script>
         <script src="./../../js/copyright.js" type="text/JavaScript"></script>
+        <script src="./../../js/commit/add_license.js" type="text/JavaScript"></script>
+        <script src="./../../js/commit/add_hit_search.js" type="text/JavaScript"></script>
+        <script src="./../../js/commit/add_last_commit.js" type="text/JavaScript"></script>
+        <script src="./../../js/commit/add_build_status.js" type="text/JavaScript"></script>
+        <script src="./../../js/commit/add_top_language.js" type="text/JavaScript"></script>
+        <script src="./../../js/commit/add_contributors.js" type="text/JavaScript"></script>
+        <script src="./../../js/commit/add_lines_of_code.js" type="text/JavaScript"></script>
+        <script src="./../../js/commit/add_pull_requests.js" type="text/JavaScript"></script>
+        <script src="./../../js/commit/add_language_count.js" type="text/JavaScript"></script>
+        <script src="./../../js/commit/add_workflow_status.js" type="text/JavaScript"></script>
+        <script src="./../../js/commit/add_repository_size.js" type="text/JavaScript"></script>
+        <script src="./../../js/commit/add_number_of_forks.js" type="text/JavaScript"></script>
+        <script src="./../../js/commit/add_number_of_stars.js" type="text/JavaScript"></script>
+        <script src="./../../js/commit/add_number_of_issues.js" type="text/JavaScript"></script>
+        <script src="./../../js/commit/add_commit_frequency.js" type="text/JavaScript"></script>
+        <script src="./../../js/commit/add_number_of_watchers.js" type="text/JavaScript"></script>
+        <script src="./../../js/commit/add_contributors_count.js" type="text/JavaScript"></script>
+        <script src="./../../js/commit/add_a_user_global_status.js" type="text/JavaScript"></script>
     </head>
 
     <body>
@@ -39,8 +58,133 @@
         <br>
         <main>
             <article class="article_body">
-                <h1>Commit</h1>
-                <p></p>
+                <table>
+                    <tr>
+                        <th>Repository Name</th>
+                        <td>space-track</td>
+                    </tr>
+                    <tr>
+                        <th>Build Status</th>
+                        <td><span id="build_status"></span></td>
+                    </tr>
+                    <tr>
+                        <th>Workflow Status</th>
+                        <td><span id="workflow_status"></span></td>
+                    </tr>
+                    <tr>
+                        <th>Repository Size</th>
+                        <td><span id="repository_size"></span></td>
+                    </tr>
+                    <tr>
+                        <th>Repository License</th>
+                        <td><span id="repository_license"></span></td>
+                    </tr>
+                    <tr>
+                        <th>Lines of Code</th>
+                        <td><span id="lines_of_code"></span></td>
+                    </tr>
+                </table>
+                <br>
+                <table>
+                    <tr>
+                        <th colspan="2">Languages</th>
+                    </tr>
+                    <tr>
+                        <th>Top Language</th>
+                        <td><span id="top_language"></span></td>
+                    </tr>
+                    <tr>
+                        <th>Language Count</th>
+                        <td><span id="language_count"></span></td>
+                    </tr>
+                    <tr>
+                        <th>Hit search</th>
+                        <td><span id="hit_search"></span></td>
+                    </tr>
+                </table>
+                <br>
+                <table>
+                    <tr>
+                        <th>Number of Pull Requests</th>
+                        <td><span id="pull_request"></span></td>
+                    </tr>
+                    <tr>
+                        <th>Number of Issues</th>
+                        <td><span id="issues"></span></td>
+                    </tr>
+                    <tr>
+                        <th>Number of Forks</th>
+                        <td><span id="forks"></span></td>
+                    </tr>
+                    <tr>
+                        <th>Number of Stars</th>
+                        <td><span id="stars"></span></td>
+                    </tr>
+                    <tr>
+                        <th>Number of Watchers</th>
+                        <td><span id="watchers"></span></td>
+                    </tr>
+                    <!-- <tr>
+                        <th>Number of Releases</th>
+                        <td><span id="releases"></span></td>
+                    </tr> -->
+                </table>
+                <br>
+                <table>
+                    <tr>
+                        <th colspan="2">Contributors</th>
+                    </tr>
+                    <tr>
+                        <th colspan="2"><span id="contributor_harleen_sk"></span></td>
+                    </tr>
+                    <tr>
+                        <th colspan="2"><span id="contributor_imariee"></span></td>
+                    </tr>
+                    <tr>
+                        <th colspan="2"><span id="contributor_orionpx4k"></span></td>
+                    </tr>
+                    <tr>
+                        <th colspan="2"><span id="contributor_komiwolf"></span></td>
+                    </tr>
+                    <tr>
+                        <th>Last Commit</th>
+                        <td><span id="last_commit"></span></td>
+                    </tr>
+                    <tr>
+                        <th>Commit Frequency</th>
+                        <td><span id="commit_frequency"></span></td>
+                    </tr>
+                    <tr>
+                        <th>Contributors</th>
+                        <td><span id="contributors"></span></td>
+                    </tr>
+                    <tr>
+                        <th>Contributors Count</th>
+                        <td><span id="contributors_count"></span></td>
+                    </tr>
+                    <!-- https://github.com/anuraghazra/github-readme-stats/blob/master/themes/README.md -->
+                    <!-- <tr>
+                        <th>Contributors Count</th>
+                        <td><span id="build_status"></span></td>
+                    </tr>
+                    <tr>
+                        <th>Contributors</th>
+                        <td><span id="workflow_status"></span></td>
+                    </tr> -->
+                </table>
+                <br>
+                <!-- <table>
+                    <thead>
+                        <tr>
+                            <th>Commit</th>
+                            <th>Author</th>
+                            <th>Date</th>
+                            <th>Message</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table> -->
             </article>
         </main>
         <footer>
@@ -54,6 +198,35 @@
             initialiseTheme("theme","darkOrLight",'../../../','files/css/boostrap/boostrap_dark.css','files/css/boostrap/bootstrap.css');
             copyright("copyright_zone");
             add_inform("inform_cookie");
+        </script>
+        <script type="text/JavaScript">
+            var owner = "Hanra-s-work",
+                repository = "space-track";
+            add_build_status("build_status",owner,repository,"space.yml");
+            add_workflow_status("workflow_status",owner,repository,"space.yml");
+            add_repository_size("repository_size",owner,repository);
+            add_license("repository_license", owner, repository);
+            add_lines_of_code("lines_of_code",owner,repository);
+            add_top_language("top_language",owner, repository);
+            add_language_count("language_count",owner, repository);
+            add_hit_search("hit_search",owner, repository, "c");
+            add_hit_search("hit_search",owner, repository, "Bash");
+            add_hit_search("hit_search",owner, repository, "Makefile");
+            add_hit_search("hit_search",owner, repository, "h");
+            add_hit_search("hit_search",owner, repository, "space-track");
+            add_pull_requests("pull_request",owner, repository);
+            add_number_of_issues("issues", owner, repository);
+            add_number_of_forks("forks", owner, repository);
+            add_number_of_stars("stars", owner, repository);
+            add_number_of_watchers("watchers", owner, repository);
+            add_a_user_global_status("contributor_harleen_sk","Harleen-sk");
+            add_a_user_global_status("contributor_imariee","iMariee");
+            add_a_user_global_status("contributor_orionpx4k","OrionPX4k");
+            add_a_user_global_status("contributor_komiwolf","KomiWolf");
+            add_last_commit("last_commit", owner, repository);
+            add_commit_frequency("commit_frequency",owner, repository,"m");
+            add_contributors("contributors", owner, repository);
+            add_contributors_count("contributors_count",owner, repository);
         </script>
         <script async="" defer="" src="https://buttons.github.io/buttons.js"></script>
     </body>

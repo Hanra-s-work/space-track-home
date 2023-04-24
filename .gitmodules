@@ -19,3 +19,6 @@
 [submodule "bonus/bonus_ressources/js_libs/github"]
 	path = bonus/bonus_ressources/js_libs/github
 	url = git@github.com:github-tools/github.git
+[submodule "bonus/bonus_ressources/js_libs/readme-jokes"]
+	path = bonus/bonus_ressources/js_libs/readme-jokes
+	url = git@github.com:ABSphreak/readme-jokes.git

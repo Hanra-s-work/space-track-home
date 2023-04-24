@@ -317,3 +317,19 @@ copyright,
     font-style: italic;
     font-weight: bold;
 }
+
+/* custom tables */
+table {
+    border: 1px white groove;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    font-size: 20px;
+}
+
+td,
+th {
+    border: 1px white groove;
+}
