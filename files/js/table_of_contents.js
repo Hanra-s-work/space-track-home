@@ -11,7 +11,7 @@ function keep_as_link(CURRENT = "Home", links = {}) {
 
     for (key in links) {
         if (key == CURRENT) {
-            res += `        <li class="table_list_bullet">${key}</li>`;
+            res += `        <li class="table_list_bullet" style="color:black;">${key}</li>`;
         } else {
             res += `        <li class="table_list_bullet"><a class="table_list_link" href="${links[key]}">${key}</a></li>`;
         }
