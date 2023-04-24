@@ -1,0 +1,40 @@
+/*
+** EPITECH PROJECT, 2022
+** space-track-home (Workspace)
+** File description:
+** powerpoint.css
+*/
+
+#header {
+    /* position: relative; */
+    z-index: 2;
+}
+
+main {
+    width: 100%;
+    height: 604px;
+}
+
+main iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.window {
+    background-color: #000000;
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5em;
+    font-weight: 300;
+    height: max-content;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
