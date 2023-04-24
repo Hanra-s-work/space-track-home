@@ -19,7 +19,7 @@ function writeBodyHeader(ID, HOME = "/") {
     writeBodyHeader += '        <!-- Place this tag where you want the button to render. -->\n';
     writeBodyHeader += '        <a class="github-button" href="https://github.com/Hanra-s-work/space-track-home/fork" data-icon="octicon-repo-forked" data-show-count="true" aria-label="Fork Hanra-s-work/space-track-home on GitHub">Fork (Website)</a>\n';
     writeBodyHeader += '        <!-- Place this tag where you want the button to render. -->\n';
-    writeBodyHeader += '        <img src="https://github.com/Hanra-s-work/space-track-home/actions/workflows/gh-pages.yml/badge.svg" alt="GitHub Pages build status">'
+    writeBodyHeader += '        <a href="https://github.com/Hanra-s-work/space-track-home" class="link"><img src="https://img.shields.io/github/actions/workflow/status/Hanra-s-work/space-track-home/jekyll-gh-pages.yml?branch=main&label=build&logo=github&style=flat-square" alt="GitHub Pages build status" aria-label="The build status of the github pages"/></a>'
     writeBodyHeader += '    </HeaderRight>\n';
     writeBodyHeader += '</HeaderContainer>\n';
     writeBodyHeader += '<div id="checkboxContainer">\n';
