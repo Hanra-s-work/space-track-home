@@ -1,0 +1,35 @@
+##
+## EPITECH PROJECT, 2022
+## make_web_compatible
+## File description:
+## docker-compose.yml
+##
+
+version: '3'
+services:
+  build_program:
+    container_name: wa-build
+    image: web-assembly-build:latest
+    environment:
+      - input_dir=/home/in
+      - output_dir=/home/out
+      # - manager_script=${input_dir}/run_web_assembly_compilation.sh
+    volumes:
+      - ./prog:/home/in
+      - ./tmp_build:/home/out
+    command: /bin/bash -c "chmod +x /home/in/run_web_assembly_compilation.sh && /home/in/run_web_assembly_compilation.sh /home/in /home/out"
+    build:
+      context: ./build
+      dockerfile: Dockerfile
+
+  launch_server:
+    container_name: wa-server
+    image: web-assembly-server:latest
+    volumes:
+      - ./website:/usr/local/apache2/htdocs
+      - ./tmp_build:/usr/local/apache2/htdocs/website/assembly
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    depends_on:
+      - build_program
