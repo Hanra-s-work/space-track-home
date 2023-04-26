@@ -11,9 +11,9 @@ SILENT	=	@
 
 CC	=	$(SILENT)gcc
 
-CFLAGS	=	-iquote./include
+CFLAGS	=	-Wall -Wextra
 
-CPPFLAGS	=	-Wall -Wextra
+CPPFLAGS	=	-iquote./include
 
 OBJ	=	$(SRC:.c=.o)
 

@@ -17,7 +17,7 @@ services:
     volumes:
       - ./prog:/home/in
       - ./tmp_build:/home/out
-    command: /bin/bash -c "chmod +x /home/in/run_web_assembly_compilation.sh && /home/in/run_web_assembly_compilation.sh /home/in /home/out"
+    # command: /bin/bash -c "chmod +x /home/in/run_web_assembly_compilation.sh && /home/in/run_web_assembly_compilation.sh /home/in /home/out"
     build:
       context: ./build
       dockerfile: Dockerfile

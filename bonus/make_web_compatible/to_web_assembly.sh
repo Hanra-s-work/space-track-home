@@ -111,6 +111,90 @@ RUN dnf install -y  \\ \n\
                 python3-wheel  \\ \n\
                 python3-setuptools \n\
 \n\
+# Compiling cheerp from source for fedora   \n\
+RUN dnf install -y  \\ \n\
+                gcc \\ \n\
+                g++ \\ \n\
+                lld \\ \n\
+                git \\ \n\
+                nodejs  \\ \n\
+                cmake  \\ \n\
+                python3 \\ \n\
+                ninja-build \\ \n\
+                python3-distlib \\ \n\
+                python3-distutils-extra \n\
+\n\
+RUN cd /home   && \\ \n\
+    echo 'Fetching cheerp dependencies' && \\ \n\
+    mkdir cheerp && \\ \n\
+    cd cheerp && \\ \n\
+    export CHEERP_SRC=\$PWD && \\
+    git clone --branch cheerp-3.0 https://github.com/leaningtech/cheerp-compiler && \\ \n\
+    git clone --branch cheerp-3.0 https://github.com/leaningtech/cheerp-utils && \\ \n\
+    git clone --branch cheerp-3.0 https://github.com/leaningtech/cheerp-musl && \\ \n\
+    git clone --branch cheerp-3.0 https://github.com/leaningtech/cheerp-libs && \\ \n\
+    echo 'Build Cheerp/1: compiler, stable version' && \\ \n\
+    cd cheerp-compiler  && \\  \n\
+    sed -i '13a\  llvm-ar' llvm/CheerpCmakeConf.cmake   && \\  \n\
+    cmake -S llvm -B build -C llvm/CheerpCmakeConf.cmake -DCMAKE_BUILD_TYPE=Release -DLLVM_ENABLE_PROJECTS=clang -G Ninja   && \\  \n\
+    ninja -C build -j4  && \\  \n\
+    ninja -C build install  && \\  \n\
+    cd ..   && \\  \n\
+    echo 'Build Cheerp/2: utilities and libraries, stable version' && \\ \n\
+    cd cheerp-utils && \\ \n\
+    cmake -B build -DCMAKE_INSTALL_PREFIX=/opt/cheerp . && \\ \n\
+    make -C build install && \\ \n\
+    cd .. && \\ \n\
+\
+    cd cheerp-musl && \\ \n\
+    mkdir build_genericjs && \\ \n\
+    cd build_genericjs && \\ \n\
+    RANLIB='/opt/cheerp/bin/llvm-ar s' AR='/opt/cheerp/bin/llvm-ar'  CC='/opt/cheerp/bin/clang -target cheerp' LD='/opt/cheerp/bin/llvm-link' CFLAGS='-Wno-int-conversion' ../configure --target=cheerp --disable-shared --prefix=/opt/cheerp && \\ \n\
+    make clean && \\ \n\
+    make -j8 && \\ \n\
+    make install && \\ \n\
+    cd .. && \\ \n\
+    mkdir build_asmjs && \\ \n\
+    cd build_asmjs && \\ \n\
+    RANLIB='/opt/cheerp/bin/llvm-ar s' AR='/opt/cheerp/bin/llvm-ar'  CC='/opt/cheerp/bin/clang -target cheerp-wasm' LD='/opt/cheerp/bin/llvm-link' CFLAGS='-Wno-int-conversion' ../configure --target=cheerp-wasm --disable-shared --prefix=/opt/cheerp && \\ \n\
+    make clean && \\ \n\
+    make -j8 && \\ \n\
+    make install && \\ \n\
+    cd ../.. && \\ \n\
+\
+    cd cheerp-compiler && \\ \n\
+    cmake -S runtimes -B build_runtimes_genericjs -GNinja -C runtimes/CheerpCmakeConf.cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE='/opt/cheerp/share/cmake/Modules/CheerpToolchain.cmake' && \\ \n\
+    ninja -C build_runtimes_genericjs && \\ \n\
+    ninja -C build_runtimes_genericjs install && \\ \n\
+\
+    cmake -S runtimes -B build_runtimes_wasm -GNinja -C runtimes/CheerpCmakeConf.cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE='/opt/cheerp/share/cmake/Modules/CheerpWasmToolchain.cmake' && \\ \n\
+    ninja -C build_runtimes_wasm && \\ \n\
+    ninja -C build_runtimes_wasm install && \\ \n\
+    cd .. && \\ \n\
+\
+    cd cheerp-libs && \\ \n\
+    make -C webgles install INSTALL_PREFIX=/opt/cheerp CHEERP_PREFIX=/opt/cheerp && \\ \n\
+    make -C wasm install INSTALL_PREFIX=/opt/cheerp CHEERP_PREFIX=/opt/cheerp && \\ \n\
+    make -C stdlibs install INSTALL_PREFIX=/opt/cheerp CHEERP_PREFIX=/opt/cheerp && \\ \n\
+    cd .. && \\ \n\
+\
+    echo 'Cheerp installation: FINISHED' \n\
+\n\
+RUN echo 'Testing Cheerp' && \\ \n\
+    FILE_NAME=cheerp_example.cpp && \\ \n\
+    BIN_NAME=cheerp_example.js && \\ \n\
+    echo '#include <iostream>;int main() {std::cout << \"Hello, World!\\\\n\";return 0;}' > \$BIN_NAME && \\ \n\
+    /opt/cheerp/bin/clang++ \$FILE_NAME -o \$BIN_NAME -O3 && \\ \n\
+    node cheerp_example.js  && \\ \n\
+    echo 'Cheerp test: FINISHED' \n\
+\n\
+RUN cd /home/cheerp && \\ \n\
+    cd cheerp-utils/tests   &&  \\ \n\
+    python run-tests.py /opt/cheerp/bin/clang++ node --all -j8  && \\ \n\
+    echo 'Cheerp tests: FINISHED' \n\
+\n\
+\n\
+\n\
 RUN mkdir /home/in\n\
 \n\
 WORKDIR /home/in\n\
