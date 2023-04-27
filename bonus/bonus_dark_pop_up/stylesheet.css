@@ -1,0 +1,49 @@
+/*
+** EPITECH PROJECT, 2022
+** space-track-home (Workspace)
+** File description:
+** stylesheet.css
+*/
+
+.my_body {
+    background-color: black;
+    color: white;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    box-shadow: inset white;
+    border: none;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    /* position: absolute; */
+    /* top: 0; */
+    /* left: 0; */
+    /* z-index: 1; */
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* justify-content: center; */
+    /* align-items: center; */
+}
+
+.border_top {
+    background-color: blue;
+    color: white;
+    display: flex;
+}
+
+.msg_center {
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    word-wrap: normal;
+    width: 90%;
+    height: 90%;
+    padding-left: 5%;
+    padding-right: 5%;
+}

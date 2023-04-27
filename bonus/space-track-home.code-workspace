@@ -51,6 +51,7 @@
 		"files.associations": {
 			"**/*.tt/**/*.ts": "plaintext",
 			"*.py": "python",
+			"unistd.h": "c",
 			"time.h": "c"
 		}
 	}

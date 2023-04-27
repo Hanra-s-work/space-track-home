@@ -27,7 +27,7 @@ function table_of_contents(ID, CURRENT = "Home") {
     var links = {
         "Home": "/space-track-home/",
         "Story": "/space-track-home/files/sub_pages/story",
-        "Timeline": "/space-track-home/files/sub_pages/timeline",
+        // "Timeline": "/space-track-home/files/sub_pages/timeline",
         "Commit": "/space-track-home/files/sub_pages/commit",
         "Try me": "/space-track-home/files/sub_pages/try_me",
         "Inspiration": "/space-track-home/files/sub_pages/inspiration",
