@@ -47,6 +47,11 @@
 			"yml",
 			"COBOL",
 			"ACUCOBOL"
-		]
+		],
+		"files.associations": {
+			"**/*.tt/**/*.ts": "plaintext",
+			"*.py": "python",
+			"time.h": "c"
+		}
 	}
 }

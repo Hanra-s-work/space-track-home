@@ -20,6 +20,7 @@
         <link rel="alternate icon" sizes="16x16" href="./../../img/icon/favicon_16_16.ico" />
         <title>Space Track - Try me</title>
         <meta id="theme">
+        <link rel="stylesheet" href="./../../css/try_me.css">
         <link rel="stylesheet" href="./../../css/assets/toggle.css">
         <link rel="stylesheet" href="./../../css/assets/table_of_contents.css">
         <script src="./../../js/write_body_header.js" type="text/JavaScript"></script>
@@ -31,6 +32,7 @@
         <script src="./../../js/table_of_contents.js" type="text/JavaScript"></script>
         <script src="./../../js/copyright.js" type="text/JavaScript"></script>
         <script src="./../../js/assets/add_a_joke.js" type="text/JavaScript"></script>
+        <script src="./../../js/assets/add_text_with_delay.js" type="text/JavaScript"></script>
     </head>
 
     <body>
@@ -39,7 +41,7 @@
         <br>
         <br>
         <main>
-            <p>Hello World</p>
+            <div class="msg_section" id="msg_content"></div>
         </main>
         <footer>
             <inform id="inform_cookie"></inform>
@@ -52,6 +54,7 @@
             initialiseTheme("theme","darkOrLight",'../../../','files/css/boostrap/boostrap_dark.css','files/css/boostrap/bootstrap.css');
             copyright("copyright_zone");
             add_inform("inform_cookie");
+            add_text_with_delay("msg_content", "", 0.1);
         </script>
         <script async="" defer="" src="https://buttons.github.io/buttons.js"></script>
     </body>

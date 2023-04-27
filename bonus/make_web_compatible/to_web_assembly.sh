@@ -236,15 +236,15 @@ RUN echo 'Adding emsdk to the PATH' &&  \\  \n\
 # RUN echo 'Creating run script'  &&  \\  \n\
 #     echo '#\\\!/bin/bash\\n
 \n\
-RUN echo 'Installing wasienv manually' && \\ \n\
-    cd /home && \\ \n\
-    mkdir wasienv   && \\ \n\
-    cd wasienv  && \\ \n\
-    curl https://raw.githubusercontent.com/wasienv/wasienv/master/install.sh | sh \n\
+# RUN echo 'Installing wasienv manually' && \\ \n\
+#     cd /home && \\ \n\
+#     mkdir wasienv   && \\ \n\
+#     cd wasienv  && \\ \n\
+#     curl https://raw.githubusercontent.com/wasienv/wasienv/master/install.sh | sh \n\
 \n\
-RUN echo 'Adding wasienv to the PATH' &&  \\  \n\
-    echo 'PATH=\"/root/.wasienv/bin:\$PATH\"'>> \$HOME/.bashrc && \\ \n\
-    echo 'export PATH' >> \$HOME/.bashrc \n\
+# RUN echo 'Adding wasienv to the PATH' &&  \\  \n\
+#     echo 'PATH=\"/root/.wasienv/bin:\$PATH\"'>> \$HOME/.bashrc && \\ \n\
+#     echo 'export PATH' >> \$HOME/.bashrc \n\
 
 # RUN echo 'Installing CSFML manually'  \\ \n\
 \n\

@@ -1,0 +1,27 @@
+/*
+** EPITECH PROJECT, 2022
+** space-track-home (Workspace)
+** File description:
+** try_me.css
+*/
+
+.msg_section {
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    box-shadow: inset white;
+    border: none;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    /* position: absolute; */
+    /* top: 0; */
+    /* left: 0; */
+    /* z-index: 1; */
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* justify-content: center; */
+    /* align-items: center; */
+}

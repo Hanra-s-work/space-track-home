@@ -38,7 +38,7 @@ services:
     container_name: wa-server
     image: web-assembly-server:latest
     ports:
-      - "8080:80"
+      - "8081:80"
     volumes:
       - ./website:/usr/local/apache2/htdocs
       - ./tmp_build:/usr/local/apache2/htdocs/website/assembly
