@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../../lib/libcsfml-system.a CMakeFiles/csfml-system.dir/Clock.cpp.o CMakeFiles/csfml-system.dir/Mutex.cpp.o CMakeFiles/csfml-system.dir/Sleep.cpp.o CMakeFiles/csfml-system.dir/Thread.cpp.o CMakeFiles/csfml-system.dir/Time.cpp.o
+/usr/bin/ranlib ../../../lib/libcsfml-system.a

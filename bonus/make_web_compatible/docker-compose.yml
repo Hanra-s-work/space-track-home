@@ -18,18 +18,40 @@ services:
       - ./prog:/home/in
       - ./tmp_build:/home/out
     # command: /bin/bash -c "chmod +x /home/in/run_web_assembly_compilation.sh && /home/in/run_web_assembly_compilation.sh /home/in /home/out"
+
+    tty: true
+    # stdin_open: true
+    # command: /bin/bash
     build:
       context: ./build
       dockerfile: Dockerfile
 
+  # build_program_debug:
+  #   extends:
+  #     service: build_program
+  #   container_name: wa-build-debug
+  #   tty: true
+  #   stdin_open: true
+  #   command: /bin/bash
+
   launch_server:
     container_name: wa-server
     image: web-assembly-server:latest
+    ports:
+      - "8080:80"
     volumes:
       - ./website:/usr/local/apache2/htdocs
       - ./tmp_build:/usr/local/apache2/htdocs/website/assembly
+    # tty: true
     build:
       context: ./server
       dockerfile: Dockerfile
     depends_on:
       - build_program
+  # launch_server_debug:
+  #   extends:
+  #     service: launch_server
+  #   container_name: wa-server-debug
+  #   tty: true
+  #   stdin_open: true
+  #   command: /bin/bash

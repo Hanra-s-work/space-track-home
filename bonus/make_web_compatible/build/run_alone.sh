@@ -21,6 +21,7 @@ if [ $# -eq 0 ]; then
     sudo docker rm $CONTAINER_NAME
     sudo docker run -it -v $VOL1 -v $VOL2 -d --name $CONTAINER_NAME $IMAGE_NAME
     sudo docker exec -it $CONTAINER_NAME /bin/bash
+    sudo docker stop $CONTAINER_NAME
 else
     if [ $1 == "--help" ] || [ $1 == "-h" ] || [ $1 == "/?" ]; then
         echo "USAGE:"
@@ -31,4 +32,6 @@ else
     sudo docker rm $CONTAINER_NAME
     sudo docker run -it -v $VOL1 -v $VOL2 -d --name $CONTAINER_NAME $IMAGE_NAME
     sudo docker exec -it $CONTAINER_NAME /bin/bash -c "$@"
+    sudo docker stop $CONTAINER_NAME
+    sudo docker rm $CONTAINER_NAME
 fi

@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../../lib/libcsfml-window.a CMakeFiles/csfml-window.dir/Clipboard.cpp.o CMakeFiles/csfml-window.dir/Cursor.cpp.o CMakeFiles/csfml-window.dir/Context.cpp.o CMakeFiles/csfml-window.dir/Joystick.cpp.o CMakeFiles/csfml-window.dir/Keyboard.cpp.o CMakeFiles/csfml-window.dir/Mouse.cpp.o CMakeFiles/csfml-window.dir/Sensor.cpp.o CMakeFiles/csfml-window.dir/Touch.cpp.o CMakeFiles/csfml-window.dir/VideoMode.cpp.o CMakeFiles/csfml-window.dir/Window.cpp.o
+/usr/bin/ranlib ../../../lib/libcsfml-window.a

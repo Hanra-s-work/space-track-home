@@ -14,6 +14,7 @@ ENV WHERE_AM_I Docker_$BUILDER_PATH\n\
 RUN dnf install -y \\ \n\
             gcc \\ \n\
             lld \\ \n\
+            which   \\  \n\
             make    \\ \n\
             llvm    \\ \n\
             clang   \\ \n\
@@ -35,6 +36,8 @@ RUN dnf install -y \\ \n\
 #             cmake-filesystem  \n\
 \n\
 RUN dnf install -y \\ \n\
+            SFML  \\ \n\
+            CSFML  \\ \n\
             SFML-devel  \\ \n\
             CSFML-devel \n\
 \n\
@@ -124,75 +127,126 @@ RUN dnf install -y  \\ \n\
                 python3-distlib \\ \n\
                 python3-distutils-extra \n\
 \n\
-RUN cd /home   && \\ \n\
-    echo 'Fetching cheerp dependencies' && \\ \n\
-    mkdir cheerp && \\ \n\
-    cd cheerp && \\ \n\
-    export CHEERP_SRC=\$PWD && \\
-    git clone --branch cheerp-3.0 https://github.com/leaningtech/cheerp-compiler && \\ \n\
-    git clone --branch cheerp-3.0 https://github.com/leaningtech/cheerp-utils && \\ \n\
-    git clone --branch cheerp-3.0 https://github.com/leaningtech/cheerp-musl && \\ \n\
-    git clone --branch cheerp-3.0 https://github.com/leaningtech/cheerp-libs && \\ \n\
-    echo 'Build Cheerp/1: compiler, stable version' && \\ \n\
-    cd cheerp-compiler  && \\  \n\
-    sed -i '13a\  llvm-ar' llvm/CheerpCmakeConf.cmake   && \\  \n\
-    cmake -S llvm -B build -C llvm/CheerpCmakeConf.cmake -DCMAKE_BUILD_TYPE=Release -DLLVM_ENABLE_PROJECTS=clang -G Ninja   && \\  \n\
-    ninja -C build -j4  && \\  \n\
-    ninja -C build install  && \\  \n\
-    cd ..   && \\  \n\
-    echo 'Build Cheerp/2: utilities and libraries, stable version' && \\ \n\
-    cd cheerp-utils && \\ \n\
-    cmake -B build -DCMAKE_INSTALL_PREFIX=/opt/cheerp . && \\ \n\
-    make -C build install && \\ \n\
-    cd .. && \\ \n\
-\
-    cd cheerp-musl && \\ \n\
-    mkdir build_genericjs && \\ \n\
-    cd build_genericjs && \\ \n\
-    RANLIB='/opt/cheerp/bin/llvm-ar s' AR='/opt/cheerp/bin/llvm-ar'  CC='/opt/cheerp/bin/clang -target cheerp' LD='/opt/cheerp/bin/llvm-link' CFLAGS='-Wno-int-conversion' ../configure --target=cheerp --disable-shared --prefix=/opt/cheerp && \\ \n\
-    make clean && \\ \n\
-    make -j8 && \\ \n\
-    make install && \\ \n\
-    cd .. && \\ \n\
-    mkdir build_asmjs && \\ \n\
-    cd build_asmjs && \\ \n\
-    RANLIB='/opt/cheerp/bin/llvm-ar s' AR='/opt/cheerp/bin/llvm-ar'  CC='/opt/cheerp/bin/clang -target cheerp-wasm' LD='/opt/cheerp/bin/llvm-link' CFLAGS='-Wno-int-conversion' ../configure --target=cheerp-wasm --disable-shared --prefix=/opt/cheerp && \\ \n\
-    make clean && \\ \n\
-    make -j8 && \\ \n\
-    make install && \\ \n\
-    cd ../.. && \\ \n\
-\
-    cd cheerp-compiler && \\ \n\
-    cmake -S runtimes -B build_runtimes_genericjs -GNinja -C runtimes/CheerpCmakeConf.cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE='/opt/cheerp/share/cmake/Modules/CheerpToolchain.cmake' && \\ \n\
-    ninja -C build_runtimes_genericjs && \\ \n\
-    ninja -C build_runtimes_genericjs install && \\ \n\
-\
-    cmake -S runtimes -B build_runtimes_wasm -GNinja -C runtimes/CheerpCmakeConf.cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE='/opt/cheerp/share/cmake/Modules/CheerpWasmToolchain.cmake' && \\ \n\
-    ninja -C build_runtimes_wasm && \\ \n\
-    ninja -C build_runtimes_wasm install && \\ \n\
-    cd .. && \\ \n\
-\
-    cd cheerp-libs && \\ \n\
-    make -C webgles install INSTALL_PREFIX=/opt/cheerp CHEERP_PREFIX=/opt/cheerp && \\ \n\
-    make -C wasm install INSTALL_PREFIX=/opt/cheerp CHEERP_PREFIX=/opt/cheerp && \\ \n\
-    make -C stdlibs install INSTALL_PREFIX=/opt/cheerp CHEERP_PREFIX=/opt/cheerp && \\ \n\
-    cd .. && \\ \n\
-\
-    echo 'Cheerp installation: FINISHED' \n\
+# RUN cd /home   && \\ \n\
+#     echo 'Fetching cheerp dependencies' && \\ \n\
+#     mkdir cheerp && \\ \n\
+#     cd cheerp && \\ \n\
+#     export CHEERP_SRC=\$PWD && \\ \n\
+#     git clone --branch cheerp-3.0 https://github.com/leaningtech/cheerp-compiler && \\ \n\
+#     git clone --branch cheerp-3.0 https://github.com/leaningtech/cheerp-utils && \\ \n\
+#     git clone --branch cheerp-3.0 https://github.com/leaningtech/cheerp-musl && \\ \n\
+#     git clone --branch cheerp-3.0 https://github.com/leaningtech/cheerp-libs && \\ \n\
+#     echo 'Build Cheerp/1: compiler, stable version' && \\ \n\
+#     cd cheerp-compiler  && \\  \n\
+#     sed -i '13a\  llvm-ar' llvm/CheerpCmakeConf.cmake   && \\  \n\
+#     cmake -S llvm -B build -C llvm/CheerpCmakeConf.cmake -DCMAKE_BUILD_TYPE=Release -DLLVM_ENABLE_PROJECTS=clang -G Ninja   && \\  \n\
+#     ninja -C build -j4  && \\  \n\
+#     ninja -C build install  && \\  \n\
+#     cd ..   && \\  \n\
+#     echo 'Build Cheerp/2: utilities and libraries, stable version' && \\ \n\
+#     cd cheerp-utils && \\ \n\
+#     cmake -B build -DCMAKE_INSTALL_PREFIX=/opt/cheerp . && \\ \n\
+#     make -C build install && \\ \n\
+#     cd .. && \\ \n\
+# \
+#     cd cheerp-musl && \\ \n\
+#     mkdir build_genericjs && \\ \n\
+#     cd build_genericjs && \\ \n\
+#     RANLIB='/opt/cheerp/bin/llvm-ar s' AR='/opt/cheerp/bin/llvm-ar'  CC='/opt/cheerp/bin/clang -target cheerp' LD='/opt/cheerp/bin/llvm-link' CFLAGS='-Wno-int-conversion' ../configure --target=cheerp --disable-shared --prefix=/opt/cheerp && \\ \n\
+#     make clean && \\ \n\
+#     make -j8 && \\ \n\
+#     make install && \\ \n\
+#     cd .. && \\ \n\
+#     mkdir build_asmjs && \\ \n\
+#     cd build_asmjs && \\ \n\
+#     RANLIB='/opt/cheerp/bin/llvm-ar s' AR='/opt/cheerp/bin/llvm-ar'  CC='/opt/cheerp/bin/clang -target cheerp-wasm' LD='/opt/cheerp/bin/llvm-link' CFLAGS='-Wno-int-conversion' ../configure --target=cheerp-wasm --disable-shared --prefix=/opt/cheerp && \\ \n\
+#     make clean && \\ \n\
+#     make -j8 && \\ \n\
+#     make install && \\ \n\
+#     cd ../.. && \\ \n\
+# \
+#     cd cheerp-compiler && \\ \n\
+#     cmake -S runtimes -B build_runtimes_genericjs -GNinja -C runtimes/CheerpCmakeConf.cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE='/opt/cheerp/share/cmake/Modules/CheerpToolchain.cmake' && \\ \n\
+#     ninja -C build_runtimes_genericjs && \\ \n\
+#     ninja -C build_runtimes_genericjs install && \\ \n\
+# \
+#     cmake -S runtimes -B build_runtimes_wasm -GNinja -C runtimes/CheerpCmakeConf.cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE='/opt/cheerp/share/cmake/Modules/CheerpWasmToolchain.cmake' && \\ \n\
+#     ninja -C build_runtimes_wasm && \\ \n\
+#     ninja -C build_runtimes_wasm install && \\ \n\
+#     cd .. && \\ \n\
+# \
+#     cd cheerp-libs && \\ \n\
+#     make -C webgles install INSTALL_PREFIX=/opt/cheerp CHEERP_PREFIX=/opt/cheerp && \\ \n\
+#     make -C wasm install INSTALL_PREFIX=/opt/cheerp CHEERP_PREFIX=/opt/cheerp && \\ \n\
+#     make -C stdlibs install INSTALL_PREFIX=/opt/cheerp CHEERP_PREFIX=/opt/cheerp && \\ \n\
+#     cd .. && \\ \n\
+# \
+#     echo 'Cheerp installation: FINISHED' \n\
+# \n\
+# RUN echo 'Testing Cheerp' && \\ \n\
+#     FILE_NAME=cheerp_example.cpp && \\ \n\
+#     BIN_NAME=cheerp_example.js && \\ \n\
+#     echo '#include <iostream>;int main() {std::cout << \"Hello, World!\\\\n\";return 0;}' > \$BIN_NAME && \\ \n\
+#     /opt/cheerp/bin/clang++ \$FILE_NAME -o \$BIN_NAME -O3 && \\ \n\
+#     node cheerp_example.js  && \\ \n\
+#     echo 'Cheerp test: FINISHED' \n\
+# \n\
+# RUN cd /home/cheerp && \\ \n\
+#     cd cheerp-utils/tests   &&  \\ \n\
+#     python run-tests.py /opt/cheerp/bin/clang++ node --all -j8  && \\ \n\
+#     echo 'Cheerp tests: FINISHED' \n\
 \n\
-RUN echo 'Testing Cheerp' && \\ \n\
-    FILE_NAME=cheerp_example.cpp && \\ \n\
-    BIN_NAME=cheerp_example.js && \\ \n\
-    echo '#include <iostream>;int main() {std::cout << \"Hello, World!\\\\n\";return 0;}' > \$BIN_NAME && \\ \n\
-    /opt/cheerp/bin/clang++ \$FILE_NAME -o \$BIN_NAME -O3 && \\ \n\
-    node cheerp_example.js  && \\ \n\
-    echo 'Cheerp test: FINISHED' \n\
+RUN echo 'Downloading Emscripten dependencies'  &&  \\  \n\
+    dnf install -y  \\  \n\
+                xz     \\  \n\
+                tar     \\  \n\
+                git     \\  \n\
+                cmake   \\  \n\
+                bzip2   \\  \n\
+                python  \\  \n\
+                nodejs  \\  \n\
+                python3  \n\
 \n\
-RUN cd /home/cheerp && \\ \n\
-    cd cheerp-utils/tests   &&  \\ \n\
-    python run-tests.py /opt/cheerp/bin/clang++ node --all -j8  && \\ \n\
-    echo 'Cheerp tests: FINISHED' \n\
+RUN echo 'Installing Emscripten' && \\ \n\
+    cd /home && \\ \n\
+    mkdir emscripten    &&  \\ \n\
+    cd emscripten   &&  \\ \n\
+    git clone https://github.com/emscripten-core/emsdk.git  && \\ \n\
+    echo '\\033[1;30mEntering the emsdk directory\\033[0m' &&  \\ \n\
+    cd emsdk  && \\ \n\
+    echo '# Pulling the latest version of the repository\\033[0m' && \\    \n\
+    git pull    &&  \\  \n\
+    echo '\\033[1;36m# Rebinding the nodejs to node\\033[0m' &&  \\ \n\
+    echo 'NODE_JS=node'>.emscripten \n\
 \n\
+RUN echo '\\033[1;17m# Fetching the latest version of the emsdk (not needed the first time you clone)\\033[0m'    &&  \\  \n\
+    cd /home/emscripten/emsdk && \\  \n\
+    ./emsdk install latest \n\
+\n\
+RUN echo '\\033[1;42m# Downloading and installing the latest SDK tools.\\033[0m'   &&  \\  \n\
+    cd /home/emscripten/emsdk && \\  \n\
+    ./emsdk activate latest  \n\
+\n\
+RUN echo 'Adding emsdk to the PATH' &&  \\  \n\
+    echo 'PATH=\"/home/emscripten/emsdk:/emscripten/emsdk/upstream/emscripten:\$PATH\"'>> \$HOME/.bashrc && \\ \n\
+    echo 'export PATH' >> \$HOME/.bashrc && \\ \n\
+    echo \"alias aemdk='source /home/emscripten/emsdk/emsdk_env.sh'\" >> \$HOME/.bashrc \n\
+\n\
+\n\
+# RUN echo 'Creating run script'  &&  \\  \n\
+#     echo '#\\\!/bin/bash\\n
+\n\
+RUN echo 'Installing wasienv manually' && \\ \n\
+    cd /home && \\ \n\
+    mkdir wasienv   && \\ \n\
+    cd wasienv  && \\ \n\
+    curl https://raw.githubusercontent.com/wasienv/wasienv/master/install.sh | sh \n\
+\n\
+RUN echo 'Adding wasienv to the PATH' &&  \\  \n\
+    echo 'PATH=\"/root/.wasienv/bin:\$PATH\"'>> \$HOME/.bashrc && \\ \n\
+    echo 'export PATH' >> \$HOME/.bashrc \n\
+
+# RUN echo 'Installing CSFML manually'  \\ \n\
 \n\
 \n\
 RUN mkdir /home/in\n\
