@@ -23,6 +23,7 @@
         <link rel="stylesheet" href="./../../css/try_me.css">
         <link rel="stylesheet" href="./../../css/assets/toggle.css">
         <link rel="stylesheet" href="./../../css/assets/table_of_contents.css">
+        <link rel="stylesheet" href="./../../css/assets/win_95_message_box.css">
         <script src="./../../js/write_body_header.js" type="text/JavaScript"></script>
         <script src="./../../js/assets/sleep.js" type="text/JavaScript"></script>
         <script src="./../../js/assets/add_inform.js" type="text/JavaScript"></script>
@@ -33,6 +34,7 @@
         <script src="./../../js/copyright.js" type="text/JavaScript"></script>
         <script src="./../../js/assets/add_a_joke.js" type="text/JavaScript"></script>
         <script src="./../../js/assets/add_text_with_delay.js" type="text/JavaScript"></script>
+        <script src="./../../js/assets/add_win95_message_box.js" type="text/JavaScript"></script>
     </head>
 
     <body>
@@ -42,13 +44,7 @@
         <br>
         <main>
             <div class="msg_section" id="msg_content">
-                <p>Dear Visitors,</p>
-                <p>Unfortunately, based of my current knowledge of web assembly it is not possible for me to compile CSFML in a way that a browser could run it.\n</p>
-                <br>
-                <p>I am sincerely sorry for dissapointing you.</p>
-                <br>
-                <p><span style='text-align:left'><i>The website creator</i></span></p>
-                </pre>"
+                <span id="appology_message"></span>
             </div>
         </main>
         <footer>
@@ -63,6 +59,19 @@
             copyright("copyright_zone");
             add_inform("inform_cookie");
             // add_text_with_delay("msg_content", "", 0.1);
+            add_win95_message_box(
+                "appology_message",
+                "Web-assembly Error",
+                [
+                    "Dear Visitors,",
+                    "Unfortunately, based of my current knowledge of web assembly it is not possible for me to compile CSFML in a way that a browser could run it.",
+                    "<br>",
+                    "I am sincerely sorry for dissapointing you.",
+                    "<br>",
+                    "<i class='p_font_body'>The website creator</i>"
+                ],
+                "../../",
+                ["OK"]);
         </script>
         <script async="" defer="" src="https://buttons.github.io/buttons.js"></script>
     </body>

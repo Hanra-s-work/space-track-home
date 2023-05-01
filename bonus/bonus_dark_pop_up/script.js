@@ -5,3 +5,6 @@
 ** script.js
 */
 
+function close_window(ID) {
+    document.getElementById(ID).style.display = "none";
+}
