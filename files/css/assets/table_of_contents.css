@@ -108,12 +108,14 @@
 }
 
 .table_button {
-    background-color: blue;
+    background-color: #6fd9d9;
     color: white;
     font-weight: bolder;
     border-style: outset;
     border-color: black;
     border-width: 2px;
+    border-style: double;
+    cursor: pointer;
 }
 
 .table_close_button {
@@ -124,10 +126,10 @@
 
 .table_button:hover {
     background-color: red;
-    border-style: inset;
+    border-width: 2px;
 }
 
 .table_button:active {
     background-color: green;
-    border-style: inset;
+    border-width: 2px;
 }
